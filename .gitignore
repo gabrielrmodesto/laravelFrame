@@ -6,3 +6,5 @@
 Homestead.json
 Homestead.yaml
 .env
+package-lock.json
+/.vscode
