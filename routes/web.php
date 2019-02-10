@@ -1,5 +1,9 @@
 <?php
 
+Route::group(['namespace' => 'Painel', 'prefix' => 'painel'], function(){
+    Route::resource('/produtos', 'ProdutoController');
+});
+
 Route::group(['namespace' => 'Site'], function(){
     //utilizando parametros no rota
     Route::get('/categoria/{id}', 'SiteController@categoria');
