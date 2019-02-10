@@ -12,4 +12,7 @@ class SiteController extends Controller
     public function contato(){
         return "Page Contato";
     }
+    public function categoria($id){
+        return "Lista de contato: {$id}";
+    }
 }
