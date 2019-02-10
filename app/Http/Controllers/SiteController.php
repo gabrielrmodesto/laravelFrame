@@ -15,4 +15,7 @@ class SiteController extends Controller
     public function categoria($id){
         return "Lista de contato: {$id}";
     }
+    public function categoriaOp($id = " "){
+        return "Lista de categoria: {$id}";
+    }
 }
