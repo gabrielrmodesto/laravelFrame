@@ -22,7 +22,8 @@ class SiteController extends Controller
     }
 
     public function index(){
-        return 'Home Page do Site';
+        $teste = 123;
+        return view('initial', ['teste' => $teste]);
     }
     public function contato(){
         return "Page Contato";
