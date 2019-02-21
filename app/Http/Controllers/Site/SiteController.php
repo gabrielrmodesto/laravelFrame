@@ -28,7 +28,7 @@ class SiteController extends Controller
         return view('site.home.index', compact('teste','teste2','teste3'));
     }
     public function contato(){
-        return "Page Contato";
+        return view('site.contato.index');
     }
     public function categoria($id){
         return "Lista de contato: {$id}";
