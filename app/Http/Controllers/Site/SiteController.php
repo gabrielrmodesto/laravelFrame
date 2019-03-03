@@ -22,10 +22,17 @@ class SiteController extends Controller
     }
 
     public function index(){
+        $title = 'Titulo do Gabriel';
+
+        $xss = '<script>alert("Ataque xss");</script>';
         $teste = 123;
         $teste2 = 456;
         $teste3 = 789;
-        return view('site.home.index', compact('teste','teste2','teste3'));
+
+        $var = '123';
+
+        $arrayData = [];
+        return view('site.home.index', compact('teste','teste2','teste3','title','xss','var','arrayData'));
     }
     public function contato(){
         return view('site.contato.index');
