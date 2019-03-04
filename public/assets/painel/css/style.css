@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a, a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+.title-list{
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+.actions a i{
+    padding-right: 10px;
+}
+.btnCadastro{
+    margin: 2% 0;
+}
