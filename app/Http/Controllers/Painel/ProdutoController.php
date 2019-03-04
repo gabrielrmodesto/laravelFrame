@@ -142,16 +142,22 @@ class ProdutoController extends Controller
 //            return "Não alterado";
 
 
-        $update = $this->produto
-                     ->where('number', 1221)
-                     ->update([
-                                'name' => 'Produto Igual',
-                                'number' => 320,
-                                'active' => true,
-                             ]);
-        if($update)
-            return "Alterado com muito sucesso";
+//        $update = $this->produto
+//                     ->where('number', 1221)
+//                     ->update([
+//                                'name' => 'Produto Igual',
+//                                'number' => 320,
+//                                'active' => true,
+//                             ]);
+//        if($update)
+//            return "Alterado com muito sucesso";
+//        else
+//            return "Não alterado";
+
+        $prod = $this->produto->destroy(2);
+        if($prod)
+            return "Deletado produto";
         else
-            return "Não alterado";
+            return "Produto não deletado";
     }
 }
