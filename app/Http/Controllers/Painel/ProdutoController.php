@@ -8,14 +8,20 @@ use App\Http\Controllers\Controller;
 
 class ProdutoController extends Controller
 {
+    private $produto;
+
+    public function __construct(Produto $produto){
+        $this->produto = $produto;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Produto $produto)
+    public function index()
     {
-        $produtos = $produto->all();
+        $this->produto->all();
         return view('painel.produtos.index', compact('produtos'));
     }
 
@@ -83,5 +89,31 @@ class ProdutoController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function tests(){
+//        $prod = $this->produto;
+//        $prod->name = 'Nome do produto';
+//        $prod->number = 1231;
+//        $prod->active = true;
+//        $prod->category = 'eletronicos';
+//        $prod->description = 'Desrcription do produto';
+//        $insert = $prod->save();
+//
+//        if($insert)
+//            return "Produto inserido";
+//        else
+//            return "Produto not insert";
+        $insert = $this->produto->create([
+                                            'name' => 'Nome do produto 2',
+                                            'number' => 1221,
+                                            'active' => false,
+                                            'category' => 'eletronicos',
+                                            'description' => 'Desrcription do produto',
+                                        ]);
+
+        if($insert)
+            return "Produto inserido";
+        else
+            return "Produto not insert";
     }
 }

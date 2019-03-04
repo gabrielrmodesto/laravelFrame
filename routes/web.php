@@ -1,6 +1,7 @@
 <?php
 
 Route::group(['namespace' => 'Painel', 'prefix' => 'painel'], function(){
+    Route::get('/produtos/tests', 'ProdutoController@tests');
     Route::resource('/produtos', 'ProdutoController');
 });
 
