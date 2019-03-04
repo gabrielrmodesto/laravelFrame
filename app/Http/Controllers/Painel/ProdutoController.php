@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class ProdutoController extends Controller
 {
-    public $produto;
+    private $produto;
 
     public function __construct(Produto $produto){
         $this->produto = $produto;
@@ -21,7 +21,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $this->produto->all();
+        $produto = $this->produto->all();
         return view('painel.produtos.index', compact('produto'));
     }
 
