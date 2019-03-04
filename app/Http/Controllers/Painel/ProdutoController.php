@@ -116,14 +116,26 @@ class ProdutoController extends Controller
 //        else
 //            return "Produto not insert";
 
-        $prod = $this->produto->find(5);
-        $prod->name = 'Update';
-        $prod->number = 12;
-        $prod->active = true;
-        $prod->category = 'Domestico';
-        $prod->description = 'Desc Update';
-        $update = $prod->save();
+//        $prod = $this->produto->find(5);
+//        $prod->name = 'Update';
+//        $prod->number = 12;
+//        $prod->active = true;
+//        $prod->category = 'Domestico';
+//        $prod->description = 'Desc Update';
+//        $update = $prod->save();
+//
+//        if($update)
+//            return "Alterado com sucesso";
+//        else
+//            return "Não alterado";
 
+
+        $prod = $this->produto->find(4);
+        $update = $prod->update([
+                                  'name' => 'Produto 6',
+                                  'number' => 320,
+                                  'active' => true,
+                                ]);
         if($update)
             return "Alterado com sucesso";
         else
