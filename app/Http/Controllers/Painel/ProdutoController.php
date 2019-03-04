@@ -103,17 +103,30 @@ class ProdutoController extends Controller
 //            return "Produto inserido";
 //        else
 //            return "Produto not insert";
-        $insert = $this->produto->create([
-                                            'name' => 'Nome do produto 5',
-                                            'number' => 11,
-                                            'active' => false,
-                                            'category' => 'eletronicos',
-                                            'description' => 'Desrcription do produto',
-                                        ]);
+//        $insert = $this->produto->create([
+//                                            'name' => 'Nome do produto 5',
+//                                            'number' => 11,
+//                                            'active' => false,
+//                                            'category' => 'eletronicos',
+//                                            'description' => 'Desrcription do produto',
+//                                        ]);
+//
+//        if($insert)
+//            return "Produto inserido, ID {$insert->id} e Nome {$insert->name}";
+//        else
+//            return "Produto not insert";
 
-        if($insert)
-            return "Produto inserido, ID {$insert->id} e Nome {$insert->name}";
+        $prod = $this->produto->find(5);
+        $prod->name = 'Update';
+        $prod->number = 12;
+        $prod->active = true;
+        $prod->category = 'Domestico';
+        $prod->description = 'Desc Update';
+        $update = $prod->save();
+
+        if($update)
+            return "Alterado com sucesso";
         else
-            return "Produto not insert";
+            return "Não alterado";
     }
 }
