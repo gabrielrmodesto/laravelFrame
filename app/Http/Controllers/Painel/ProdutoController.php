@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class ProdutoController extends Controller
 {
-    private $produto;
+    public $produto;
 
     public function __construct(Produto $produto){
         $this->produto = $produto;
@@ -22,7 +22,7 @@ class ProdutoController extends Controller
     public function index()
     {
         $this->produto->all();
-        return view('painel.produtos.index', compact('produtos'));
+        return view('painel.produtos.index', compact('produto'));
     }
 
     /**
@@ -91,18 +91,18 @@ class ProdutoController extends Controller
         //
     }
     public function tests(){
-//        $prod = $this->produto;
-//        $prod->name = 'Nome do produto';
-//        $prod->number = 1231;
-//        $prod->active = true;
-//        $prod->category = 'eletronicos';
-//        $prod->description = 'Desrcription do produto';
-//        $insert = $prod->save();
-//
-//        if($insert)
-//            return "Produto inserido";
-//        else
-//            return "Produto not insert";
+        $prod = $this->produto;
+        $prod->name = 'Nome do produto';
+        $prod->number = 1231;
+        $prod->active = true;
+        $prod->category = 'eletronicos';
+        $prod->description = 'Desrcription do produto';
+        $insert = $prod->save();
+
+        if($insert)
+            return "Produto inserido";
+        else
+            return "Produto not insert";
 //        $insert = $this->produto->create([
 //                                            'name' => 'Nome do produto 5',
 //                                            'number' => 11,
@@ -154,8 +154,8 @@ class ProdutoController extends Controller
 //        else
 //            return "Não alterado";
 
-        $prod = $this->produto->destroy(2);
-        if($prod)
+        $delete = $this->produto->where('number', 320)->delete();
+        if($delete)
             return "Deletado produto";
         else
             return "Produto não deletado";

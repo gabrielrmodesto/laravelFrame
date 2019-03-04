@@ -8,13 +8,13 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($produtos as $produto)
+    @foreach($produto as $produtos)
         <tr>
             <td>
-               {{$produto->name}}
+               {{$produtos->name}}
             </td>
             <td>
-                {{$produto->description}}
+                {{$produtos->description}}
             </td>
         </tr>
     @endforeach
