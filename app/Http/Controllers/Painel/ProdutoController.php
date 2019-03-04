@@ -104,15 +104,15 @@ class ProdutoController extends Controller
 //        else
 //            return "Produto not insert";
         $insert = $this->produto->create([
-                                            'name' => 'Nome do produto 2',
-                                            'number' => 1221,
+                                            'name' => 'Nome do produto 5',
+                                            'number' => 11,
                                             'active' => false,
                                             'category' => 'eletronicos',
                                             'description' => 'Desrcription do produto',
                                         ]);
 
         if($insert)
-            return "Produto inserido";
+            return "Produto inserido, ID {$insert->id} e Nome {$insert->name}";
         else
             return "Produto not insert";
     }
