@@ -3,6 +3,7 @@
 Route::group(['namespace' => 'Painel', 'prefix' => 'painel'], function(){
     Route::get('/produtos/tests', 'ProdutoController@tests');
     Route::resource('/produtos', 'ProdutoController@index');
+    Route::get('/produtos/create', 'ProdutoController@create');
 });
 
 Route::group(['namespace' => 'Site'], function(){

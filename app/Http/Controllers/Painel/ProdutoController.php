@@ -33,7 +33,8 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        $categories = ['eletronicos','domesticos','Limpeza','banho'];
+        return view('painel.produtos.create', compact('categories'));
     }
 
     /**

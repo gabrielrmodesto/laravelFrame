@@ -1,7 +1,7 @@
 @extends('painel.templates.template')
 @section('contentList')
     <h2 class="title-list">Listagem de produtos</h2>
-    <a href="" class="btn btn-primary btnCadastro">
+    <a href="{{url('painel/produtos/create')}}" class="btn btn-primary btnCadastro">
         <i class="fas fa-plus"></i>
         Cadastrar
     </a>
